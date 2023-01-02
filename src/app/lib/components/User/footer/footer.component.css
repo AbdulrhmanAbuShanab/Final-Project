@@ -1,0 +1,11 @@
+.customToolbar{
+    display: flex;
+}
+span{
+    font-size: xx-small;
+}
+.copy{
+    font-size: xx-small;
+    text-align: center;
+    margin-top: 14px;
+}

@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    gap: 1.25rem   
+}
+a{
+   text-decoration: none;
+   color: #FFFFFF;
+   font-size: medium;
+}

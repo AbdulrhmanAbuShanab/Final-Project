@@ -1,0 +1,72 @@
+<div class="container">
+    <h2>Create New StartUp</h2>
+    <form #form="ngForm">
+        <mat-form-field>
+            <mat-label>Enter Company Name</mat-label>
+            <input  required  matInput name="companyName" [(ngModel)]='company.companyName' >
+            <mat-error>company name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company City</mat-label>
+            <input  required  matInput name="city" [(ngModel)]='company.city' >
+            <mat-error>company city is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Email</mat-label>
+            <input  matInput name="email" type="email" [(ngModel)]='company.email' ngmodel [email]="true" >
+            <mat-error>email is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Founder</mat-label>
+            <input required  matInput name="founder" [(ngModel)]='company.founder' >
+            <mat-error>company founder is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Locataion</mat-label>
+            <input required  matInput name="location" [(ngModel)]='company.location' >
+            <mat-error>company location is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company logo</mat-label>
+            <input required  matInput name="logo" [(ngModel)]='company.logo' >
+            <mat-error>company logo is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter The Number of Company Employees</mat-label>
+            <input required  matInput name="numOfEmployees" [(ngModel)]='company.numOfEmployees' >
+            <mat-error>company employee number is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Phone</mat-label>
+            <input required  matInput name="phone" [(ngModel)]='company.phone' >
+            <mat-error>company phone is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Sector</mat-label>
+            <input required  matInput name="sector" [(ngModel)]='company.sector' >
+            <mat-error>company sector is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Website</mat-label>
+            <input required type="url"  matInput name="website" [(ngModel)]='company.website' >
+            <mat-error>company website is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter Company Year Of Establishment</mat-label>
+            <input required  matInput name="yearOfEstablishment" [(ngModel)]='company.yearOfEstablishment' >
+            <mat-error>company year of establishment is required</mat-error>
+        </mat-form-field>
+        
+          <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="submit()">Submit</button>
+    </form>
+</div>

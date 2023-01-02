@@ -1,0 +1,13 @@
+* {
+  position: relative;
+}
+
+.footer {
+  bottom:0; 
+  width: 100%;
+  position: absolute;
+}
+/* .header{
+  position: fixed;
+  width: 100%;
+} */
