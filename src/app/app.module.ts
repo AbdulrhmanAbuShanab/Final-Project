@@ -15,16 +15,14 @@ import { NavbarComponent } from './lib/components/User/navbar/navbar.component';
 import { LinksComponent } from './lib/components/User/links/links.component';
 import { MapComponent } from './pages/user/map/map.component';
 import { RequestComponent } from './pages/user/request/request.component';
-import { AboutusComponent } from './pages/user/aboutus/aboutus.component';
-import { ContactusComponent } from './pages/user/contactus/contactus.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CreateComponent } from './pages/admin/create/create.component';
-import { AllCompaniesComponent } from './pages/admin/all-companies/all-companies.component';
-
+import { CommonModule } from '@angular/common';
+import { ToolbarComponent } from './lib/components/admin/toolbar/toolbar.component';  
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NavbarComponent, LinksComponent, MapComponent, RequestComponent, AboutusComponent, ContactusComponent, CreateComponent, AllCompaniesComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent, LinksComponent, ToolbarComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

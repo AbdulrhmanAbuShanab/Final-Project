@@ -1,0 +1,18 @@
+<p>
+    <mat-toolbar class="p" color="primary">
+      <div class="left">
+        <button mat-icon-button class="example-icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h3 class="name">Admin Page</h3>
+    </div>
+    <div class="right">
+      <button mat-icon-button class="example-icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" (click)="signOut()" *ngIf="isUser">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+    </mat-toolbar>
+  </p>
