@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div class="underHeader">
+  <div class="text">
+    <h1>93 StartUps in Jordan to Watch in 2023</h1>
+    <h3>
+      Jordan's tech sector is booming. This year’s list of the best 93 Jordan
+      tech startups <br />
+      is an eclectic mix of hyper-growth scaleups, small creative startups and
+      everything in between.
+    </h3>
+  </div>
+</div>
+
+<div class="numbers">
+  <div class="first">
+    <span class="material-symbols-outlined"> rocket_launch </span>
+    <div class="right">
+      <p>90+</p>
+      <p>
+        Startups<br />
+        Supported
+      </p>
+    </div>
+  </div>
+  <div class="first">
+    <span class="material-symbols-outlined"> business_center </span>
+    <div class="right">
+      <p>900+</p>
+      <p>
+        Jobs<br />
+        Created
+      </p>
+    </div>
+  </div>
+  <div class="first">
+    <span class="material-symbols-outlined"> woman </span>
+    <div class="right">
+      <p>15%</p>
+      <p>
+        Female<br />
+        Founders
+      </p>
+    </div>
+  </div>
+  <div class="first">
+    <span class="material-symbols-outlined"> military_tech </span>
+    <div class="right">
+      <p>145+</p>
+      <p>
+        Patents<br />
+        Awarded
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="cardsContainer">
+  <div class="cards" *ngFor="let company of companies">
+    <div class="textsDetails">
+      <a [routerLink]="['/user/companydetails', company.uid]">{{ company.companyName }}</a>
+      <p>{{ company.founder }}</p>
+      <p>{{ company.city }}</p>
+    </div>
+    <img src="{{ company.logo }}" alt="company logo" />
+  </div>
+
+  <!-- <p *ngFor="let company of companies">
+        {{company.companyName}}
+    </p> -->
+</div>

@@ -3,7 +3,41 @@
     gap: 1.25rem   
 }
 a{
-   text-decoration: none;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: medium;
+    padding: 0 10px;
+    position: relative
+ }
+ a:after{
+    content: "";
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 2px;
+    width: 0;
+    left:0;
+    bottom: -1px;
+    transition: 0.4s;
+
+ }
+ a:hover::after{
+    width: 100%
+ }
+ button{
+   margin-bottom: 2px;
+   width: 150px;
+   height: 35px;
+   border: 1px solid #bbafff;
    color: #FFFFFF;
    font-size: medium;
-}
+   font-weight: 500;
+   background-color: #673ab7;
+   border-radius: 4px;
+   transition: ease-out 0.4s;
+   outline: none;
+ }
+ button:hover{
+   box-shadow: inset 150px 0 0 0 #bbafff;
+   cursor:pointer;
+ }
+ 

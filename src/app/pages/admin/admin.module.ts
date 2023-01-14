@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/lib/components/material/material.module';
 import { CreateComponent } from './create/create.component';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
+import { RequestsComponent } from './requests/requests.component';
+import { AcceptComponent } from './accept/accept.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AllCompaniesComponent } from './all-companies/all-companies.component';
     DeleteComponent,
     UpdateComponent,
     CreateComponent, 
-    AllCompaniesComponent],
+    AllCompaniesComponent, 
+    RequestsComponent,
+    AcceptComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

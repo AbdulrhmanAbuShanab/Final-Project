@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/file-input": "^9.0.0",
     "@angular/animations": "^15.0.0",
     "@angular/cdk": "^15.0.3",
     "@angular/common": "^15.0.0",
@@ -21,6 +22,10 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@fortawesome/angular-fontawesome": "^0.12.1",
+    "angular-feather": "^6.5.0",
+    "bootstrap-icons": "^1.10.3",
+    "feather-icons": "^4.29.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

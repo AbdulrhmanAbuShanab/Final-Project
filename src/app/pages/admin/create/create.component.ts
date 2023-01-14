@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { AdminFirebaseService } from 'src/app/lib/services/admin-firebase.service';
-import { Company } from 'src/app/lib/services/company';
+import { Company } from 'src/app/lib/Interfaces/company';
 
 @Component({
   selector: 'app-create',
@@ -17,6 +17,7 @@ export class CreateComponent {
     founder: '',
     logo: '',
     numOfEmployees: 0,
+    phone: '',
     sector: [],
     website: '',
     yearOfEstablishment: 0,
@@ -35,7 +36,7 @@ export class CreateComponent {
   }
 
   submit(){
-    this.companiesService.addCompany({...this.company}).subscribe({
+    this.companiesService.addCompany(this.company).subscribe({
     next: (response)=> {
       this.router.navigate(['admin/allCompanies']);  
     },
@@ -47,4 +48,4 @@ export class CreateComponent {
     //navigate
   }
 }
-
+35225

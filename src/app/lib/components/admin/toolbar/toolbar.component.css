@@ -11,3 +11,9 @@
 .name{
     margin-top: 11px;
 }
+.sidenavContent{
+    height: 88vh;
+}
+.sidenav{
+    width: 12vw;
+}

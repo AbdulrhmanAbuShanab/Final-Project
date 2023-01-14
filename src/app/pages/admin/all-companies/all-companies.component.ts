@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminFirebaseService } from 'src/app/lib/services/admin-firebase.service';
-import { Company } from 'src/app/lib/services/company';
+import { Company } from 'src/app/lib/Interfaces/company';
 import { DeleteComponent } from '../delete/delete.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { DeleteComponent } from '../delete/delete.component';
 export class AllCompaniesComponent implements OnInit {
 
   companies: Company[]=[];
-  displayedColumns:string[] = ['city', 'companyName', 'email', 'actions'];
+  displayedColumns:string[] = ['city', 'companyName', 'email', 'founder', 'logo', 'phone', 'sector', 'actions'];
   constructor(private companiesService: AdminFirebaseService, public dialog: MatDialog){
 
   }

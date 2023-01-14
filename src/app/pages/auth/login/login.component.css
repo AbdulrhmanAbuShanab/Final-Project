@@ -1,12 +1,21 @@
 .container {
-    width: 700px;
+    width: 100%;
+    height: 82vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    padding-top: 64px;
+    background-color: #ddd7ff;
 }
 
 .container > form > * {
     width: 100%
+}
+.container > p {
+    color: #3c2f80;
+    font-weight: 700;
+    font-size: x-large;
+    margin-bottom: 2rem;
 }

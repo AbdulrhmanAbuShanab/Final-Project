@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { AdminFirebaseService } from 'src/app/lib/services/admin-firebase.service';
-import { Company } from 'src/app/lib/services/company';
+import { Company } from 'src/app/lib/Interfaces/company';
 
 @Component({
   selector: 'app-update',
@@ -12,7 +12,7 @@ import { Company } from 'src/app/lib/services/company';
 export class UpdateComponent {
   company?: Company;
   company$!: Observable<Company | undefined>;
-  companyName!: string;
+  id!: string;
   constructor(private route: ActivatedRoute, 
     private companyService: AdminFirebaseService,
     private router: Router){
@@ -20,8 +20,8 @@ export class UpdateComponent {
     this.company$ = this.route.paramMap.pipe(
 
       switchMap((value)=> {
-        this.companyName = value.get('companyName')+'';
-        return this.companyService.getCompanyByName(this.companyName)
+        this.id = value.get('id')+'';
+        return this.companyService.getCompanyById(this.id)
       }
 
       )
@@ -29,7 +29,7 @@ export class UpdateComponent {
     
   }
   deleteCompany(company: any){
-    this.companyService.updateCompany(this.companyName, company);
-    this.router.navigate(['']);
+    this.companyService.updateCompany(this.id, company);
+    this.router.navigate(['admin/allCompanies']);
   }
 }

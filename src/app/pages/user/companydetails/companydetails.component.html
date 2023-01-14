@@ -1,0 +1,15 @@
+<div class="container" *ngIf="company$ | async as company">
+    <img src="{{company.logo}}" alt="company logo">
+    <div class="right">
+        <p><span>COMPANY NAME: </span>{{company.companyName}}</p>
+        <p><span>FOUNDER: </span>{{company.founder}}</p>
+        <p><span>CITY: </span>{{company.city}}</p>
+        <p><span>EMAIL: </span>{{company.email}}</p>
+        <p><span>PHONE: </span>{{company.phone}}</p>
+        <p><span>WEBSITE: </span>{{company.website}}</p>
+        <p><span>YEAR OF ESTABLISHMENT: </span>{{company.yearOfEstablishment}}</p>
+        <p><span>NUMBER OF EMPLOYEES: </span>{{company.numOfEmployees}}</p>
+        <p><span>SECTOR: </span>{{company.sector}}</p>
+        <button [routerLink]="['/user/home']">Back</button>
+    </div>
+</div>

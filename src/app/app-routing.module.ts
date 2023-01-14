@@ -22,3 +22,4 @@ canActivate: [AuthGuard]
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+  

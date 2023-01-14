@@ -26,20 +26,14 @@
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Enter Company Locataion</mat-label>
-            <input required  matInput name="location" [(ngModel)]='company.location' >
-            <mat-error>company location is required</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
             <mat-label>Enter Company logo</mat-label>
-            <input required  matInput name="logo" [(ngModel)]='company.logo' >
+            <input r    equired  matInput name="logo" [(ngModel)]='company.logo' >
             <mat-error>company logo is required</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Enter The Number of Company Employees</mat-label>
-            <input required  matInput name="numOfEmployees" [(ngModel)]='company.numOfEmployees' >
+            <input required type="number"  matInput name="numOfEmployees" [(ngModel)]='company.numOfEmployees' >
             <mat-error>company employee number is required</mat-error>
         </mat-form-field>
 
@@ -63,7 +57,7 @@
 
         <mat-form-field>
             <mat-label>Enter Company Year Of Establishment</mat-label>
-            <input required  matInput name="yearOfEstablishment" [(ngModel)]='company.yearOfEstablishment' >
+            <input required type="number"  matInput name="yearOfEstablishment" [(ngModel)]='company.yearOfEstablishment' >
             <mat-error>company year of establishment is required</mat-error>
         </mat-form-field>
         

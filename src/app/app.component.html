@@ -1,4 +1,4 @@
-<app-header class="header" *ngIf="!isUser"></app-header>
 <app-toolbar *ngIf="isUser"></app-toolbar>
+<app-header class="header" *ngIf="!isUser"></app-header>
 <router-outlet class="body"></router-outlet>
 <app-footer class="footer" *ngIf="!isUser"></app-footer>

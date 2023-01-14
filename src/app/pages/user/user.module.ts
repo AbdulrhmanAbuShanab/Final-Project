@@ -7,6 +7,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { StartupsComponent } from './startups/startups.component';
+import { MaterialModule } from 'src/app/lib/components/material/material.module';
+import { FormsModule } from '@angular/forms';
+import { CompanydetailsComponent } from './companydetails/companydetails.component';
 
 
 @NgModule({
@@ -16,11 +19,14 @@ import { StartupsComponent } from './startups/startups.component';
     AboutusComponent,
     ContactusComponent,
     HomeComponent,
-    StartupsComponent
+    StartupsComponent,
+    CompanydetailsComponent
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MaterialModule,
+    FormsModule,
   ]
 })
 export class UserModule { }
