@@ -1,4 +1,15 @@
-.customToolbar{
+mat-toolbar{
     display: flex;
     justify-content: space-between;
+    transition: background-color 1s ease;
+}
+img{
+    width: 12.5rem;
+    height: 2.1875rem;
+    margin-top: .4375rem;
+}
+
+.header_change{
+    transition: background-color 1s ease;
+    background-color: #bbafff;
 }

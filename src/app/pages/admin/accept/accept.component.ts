@@ -18,7 +18,7 @@ export class AcceptComponent {
     logo: '',
     numOfEmployees: 0,
     phone: '',
-    sector: [],
+    sector: '',
     website: '',
     yearOfEstablishment: 0,
   };

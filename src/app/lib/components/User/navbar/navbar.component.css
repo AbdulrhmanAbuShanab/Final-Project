@@ -1,43 +1,80 @@
-.container{
-    display: flex;
-    gap: 1.25rem   
+.container {
+  display: flex;
+  gap: 1.25rem;
 }
-a{
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: medium;
-    padding: 0 10px;
-    position: relative
- }
- a:after{
-    content: "";
-    position: absolute;
-    background-color: #FFFFFF;
-    height: 2px;
-    width: 0;
-    left:0;
-    bottom: -1px;
-    transition: 0.4s;
-
- }
- a:hover::after{
-    width: 100%
- }
- button{
-   margin-bottom: 2px;
-   width: 150px;
-   height: 35px;
-   border: 1px solid #bbafff;
-   color: #FFFFFF;
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: medium;
+  padding: 0 10px;
+  position: relative;
+  transition: color 1s ease;
+}
+a:after {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -1px;
+  transition: 0.4s;
+}
+a:hover::after {
+  width: 100%;
+}
+.navbar_change {
+   color: #673ab7;
+   transition: color 1s ease;
+   text-decoration: none;
    font-size: medium;
-   font-weight: 500;
+   padding: 0 10px;
+   position: relative;
+ }
+ .navbar_change:after {
+   content: "";
+   position: absolute;
    background-color: #673ab7;
-   border-radius: 4px;
-   transition: ease-out 0.4s;
-   outline: none;
+   height: 2px;
+   width: 0;
+   left: 0;
+   bottom: -1px;
+   transition: 0.4s;
  }
- button:hover{
-   box-shadow: inset 150px 0 0 0 #bbafff;
-   cursor:pointer;
+ .navbar_change:hover::after {
+   width: 100%;
  }
- 
+button {
+  margin-bottom: 2px;
+  width: 150px;
+  height: 35px;
+  border: 1px solid #bbafff;
+  color: #ffffff;
+  font-size: medium;
+  font-weight: 500;
+  background-color: #673ab7;
+  border-radius: 4px;
+  transition:  1s;
+  outline: none;
+}
+button:hover {
+  box-shadow: inset 150px 0 0 0 #bbafff;
+  cursor: pointer;
+}
+.button_change {
+  margin-bottom: 2px;
+  width: 150px;
+  height: 35px;
+  border: 1px solid #aa9fe7;
+  color: #673ab7;
+  font-size: medium;
+  font-weight: 500;
+  background-color: #bbafff;
+  border-radius: 4px;
+  transition: 1s;
+  outline: none;
+}
+.button_change:hover {
+  box-shadow: inset 150px 0 0 0 #aa9fe7;
+  cursor: pointer;
+}

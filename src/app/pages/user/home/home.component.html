@@ -52,18 +52,13 @@
     </div>
   </div>
 </div>
-
-<div class="cardsContainer">
-  <div class="cards" *ngFor="let company of companies">
-    <div class="textsDetails">
-      <a [routerLink]="['/user/companydetails', company.uid]">{{ company.companyName }}</a>
-      <p>{{ company.founder }}</p>
-      <p>{{ company.city }}</p>
-    </div>
-    <img src="{{ company.logo }}" alt="company logo" />
+<div class="apply">
+  <div class="texts">
+    <h1>Apply Now</h1>
+    <h3>
+      We are excited to learn more about you and your startup. What are you
+      waiting for? Apply now
+    </h3>
   </div>
-
-  <!-- <p *ngFor="let company of companies">
-        {{company.companyName}}
-    </p> -->
+  <button routerLink="/user/request">APPLY NOW</button>
 </div>

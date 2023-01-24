@@ -10,6 +10,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 const material = [
@@ -23,6 +25,7 @@ const material = [
   MatTableModule,
   MatSidenavModule,
   MatListModule,
+  MatPaginatorModule
 ];
 
 @NgModule({

@@ -1,0 +1,106 @@
+.searchFilter {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4.375rem;
+  background-color: #673ab7;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 7.1875rem;
+  margin-top: .9375rem;
+}
+.search > input {
+  background-color: #bbafff;
+  border: none;
+  border-radius: .3125rem;
+  width: 28.125rem;
+  margin-left: -0.5rem;
+  outline: none;
+  text-indent: .9375rem;
+}
+::placeholder {
+  color: #673ab7;
+  font-weight: 600;
+}
+.icon {
+  background-color: #bbafff;
+  width: 2.5rem;
+  border-radius: .3125rem;
+}
+.icon > i {
+  padding: 1rem;
+  color: #673ab7;
+}
+select {
+  margin-right: 7.1875rem;
+  background-color: #bbafff;
+  color: #673ab7;
+  font-weight: 600;
+  margin-top: .9375rem;
+  height: 3.125rem;
+  width: 10.9375rem;
+  outline: none;
+  border-color: #bbafff;
+  border-radius: .3125rem;
+  text-indent: .9375rem;
+}
+select:active {
+  border: none;
+}
+.cardsContainer {
+  background-color: #673ab7;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 9.375rem);
+  justify-content: center;
+  gap: 1.5625rem;
+  column-gap: 2.5rem;
+  padding-top: 6.25rem;
+  padding-bottom: 37.5rem;
+ 
+}
+.cards {
+  background-color: #bbafff;
+  width: 9.375rem;
+  height: 7.8125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5625rem;
+  border-radius: .3125rem;
+  box-shadow: .0625rem .0625rem .9375rem 0rem rgb(96, 96, 96); 
+}
+.cards img {
+  width: 4.6875rem;
+  height: 4.0625rem;
+  border-radius: .3125rem;
+  filter: drop-shadow(0 1rem .75rem #673ab7);
+  object-fit: contain;
+}
+a {
+  text-align: center;
+  margin-bottom: .625rem;
+  text-decoration: none;
+  color: #673ab7;
+  font-size: smaller;
+  font-weight: 700;
+  padding: 0 .625rem;
+  position: relative;
+  transition: color 1s ease;
+  
+}
+a:after {
+  content: "";
+  position: absolute;
+  background-color: #673ab7;
+  height: .125rem;
+  width: 0;
+  left: 0;
+  bottom: -0.0625rem;
+  transition: 0.4s;
+}
+a:hover::after {
+  width: 100%;
+}

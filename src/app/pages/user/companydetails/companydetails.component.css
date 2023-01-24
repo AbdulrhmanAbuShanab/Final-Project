@@ -1,6 +1,7 @@
 
 .container{
-    padding-top: 64px;
+    padding-top: 4.375rem;
+    padding-bottom: 32.5rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -8,36 +9,38 @@
     color: #3c2f80;
 }
 img{
-    width: 600px;
-    height: 600px;
+    width: 37.5rem;
+    height: 37.5rem;
+    object-fit: contain;
 }
 span, p{
-    font-size: 1rem;
+    font-size: 16px;
 }
 span{
     font-weight: 700;
-    margin-right: 4px;
+    margin-right: .25rem;
 }
 p{
     opacity: 80%;
 }
 p:last-of-type{
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 button{
-    margin-bottom: 2px;
-    width: 150px;
-    height: 35px;
-    border: 1px solid #bbafff;
+    margin-bottom: .125rem;
+    width: 9.375rem;
+    height: 2.1875rem;
+    border: .0625rem solid #bbafff;
     color: #FFFFFF;
     font-size: medium;
     font-weight: 500;
     background-color: #673ab7;
-    border-radius: 4px;
+    border-radius: .25rem;
     transition: ease-out 0.4s;
     outline: none;
   }
   button:hover{
-    box-shadow: inset 150px 0 0 0 #bbafff;
+    box-shadow: inset 9.375rem 0 0 0 #bbafff;
+    cursor: pointer;
   }
   

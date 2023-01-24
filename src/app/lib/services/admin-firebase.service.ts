@@ -24,9 +24,9 @@ export class AdminFirebaseService {
     return this.requestCollection.valueChanges({"idField":'uid'});
   }
   acceptRequest(request: Company) {
-    let acceptedRequest = this.companiesCollection?.add(request);
+    let acceptedRequest = this.requestCollection?.add(request);
     return from(acceptedRequest);
-  }
+    }
   removeRequest(id: string){
     return from(this.requestCollection.doc(id).delete());
   }

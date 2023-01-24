@@ -1,1 +1,26 @@
-<p>startups works!</p>
+<div class="searchFilter">
+  <div class="search">
+    <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <input
+      type="text"
+      id="companyName"
+      placeholder="Search for a company..."
+    />
+  </div>
+  <select [(ngModel)]="filter">
+    <option value="" disabled selected hidden>Filter By Sector</option>
+    <option class="africa" value="africa">Africa</option>
+    <option class="america" value="america">America</option>
+    <option class="asia" value="asia">Asia</option>
+    <option class="europe" value="europe">Europe</option>
+    <option class="oceania" value="oceania">Oceania</option>
+  </select>
+  </div>
+<div class="cardsContainer">
+  <div class="cards" *ngFor="let company of companies">
+    <img src="{{ company.logo }}" alt="company logo" />
+    <a [routerLink]="['/user/companydetails', company.uid]">{{
+      company.companyName
+    }}</a>
+  </div>
+</div>

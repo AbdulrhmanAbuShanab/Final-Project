@@ -1,5 +1,67 @@
 <mat-toolbar class="customToolbar" color="primary">
-        <span>ALL RIGHTS RESERVED 2022</span>
-        <mat-icon class="copy">copyright</mat-icon>
-        <app-links></app-links>
+  <div class="left">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/final-project-ec0a8.appspot.com/o/Website%20Logo%2FPurble%20Logo.png?alt=media&token=e4ba1455-3cdf-4e9d-b447-daf13cb70100"
+      alt="logo"
+    />
+    <div class="leftBottom">
+      <p>Terms and Conditions | Privacy Policy | Cookies Policy</p>
+      <p>Copyright © 2023 <a href="">TECH STARTUPS</a>. All rights reserved.</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="rightLeft">
+      <h4>Navigate Our Site</h4>
+      <div class="links">
+        <a routerLink="user/home">Home</a>
+        <a routerLink="user/startups">StartUps</a>
+        <a routerLink="user/map">Map</a>
+        <a routerLink="user/aboutus">About Us</a>
+        <a routerLink="user/contactus">Contact Us</a>
+        <a routerLink="user/request">Apply Now</a>
+      </div>
+      <h4>Follow Us</h4>
+      <div class="linksTwo">
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="fa-brands fa-square-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="fa-brands fa-square-instagram"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i class="fa-brands fa-square-twitter"></i
+        ></a>
+        <a href="https://www.linkedin.com" target="_blank"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+    </div>
+    <div class="rightRight">
+      <h4>Contact Us</h4>
+      <div class="contactDetails">
+        <div class="email">
+          <i class="fa-solid fa-envelope"></i>
+          <p>techstartups@support.jo</p>
+        </div>
+        <div class="phone">
+          <i class="fa-solid fa-phone"></i>
+          <p>+962799524781</p>
+        </div>
+      </div>
+      <h4>Subscribe To Our Newsletter</h4>
+      <div class="sub">
+        <form>
+          <div class="inputBox">
+            <input type="text" required />
+            <span>Name</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required />
+            <span>Email</span>
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </mat-toolbar>

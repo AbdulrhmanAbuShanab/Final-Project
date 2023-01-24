@@ -26,12 +26,6 @@
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Enter Company logo</mat-label>
-            <input r    equired  matInput name="logo" [(ngModel)]='company.logo' >
-            <mat-error>company logo is required</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
             <mat-label>Enter The Number of Company Employees</mat-label>
             <input required type="number"  matInput name="numOfEmployees" [(ngModel)]='company.numOfEmployees' >
             <mat-error>company employee number is required</mat-error>
@@ -60,6 +54,10 @@
             <input required type="number"  matInput name="yearOfEstablishment" [(ngModel)]='company.yearOfEstablishment' >
             <mat-error>company year of establishment is required</mat-error>
         </mat-form-field>
+        <div>
+            <input type="file" accept="image/*" value="select an image" (change)="upload($event)">
+            <img *ngIf="downloadUrl" [src]="downloadUrl">
+        </div>
         
           <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="submit()">Submit</button>
     </form>

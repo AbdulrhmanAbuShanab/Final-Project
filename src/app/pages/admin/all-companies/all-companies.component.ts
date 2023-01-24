@@ -12,7 +12,7 @@ import { DeleteComponent } from '../delete/delete.component';
 export class AllCompaniesComponent implements OnInit {
 
   companies: Company[]=[];
-  displayedColumns:string[] = ['city', 'companyName', 'email', 'founder', 'logo', 'phone', 'sector', 'actions'];
+  displayedColumns:string[] = ['city', 'companyName', 'email', 'founder', 'logo', 'sector', 'edit', 'delete'];
   constructor(private companiesService: AdminFirebaseService, public dialog: MatDialog){
 
   }

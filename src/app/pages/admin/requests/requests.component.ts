@@ -13,7 +13,7 @@ import { Company } from 'src/app/lib/Interfaces/company';
 export class RequestsComponent {
   
   requests: Company[]=[];
-  displayedColumns:string[] = ['city', 'companyName', 'email', 'founder', 'logo', 'phone', 'sector', 'actions'];
+  displayedColumns:string[] = ['city', 'companyName', 'email', 'founder', 'logo', 'phone', 'sector', 'accept', 'remove'];
   constructor(private requetsService: AdminFirebaseService, public dialog: MatDialog, private router: Router){
 
   }

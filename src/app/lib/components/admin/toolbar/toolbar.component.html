@@ -16,8 +16,7 @@
     </div>
     </mat-toolbar>
   </p>
-
-  <mat-sidenav-container>
+  <mat-sidenav-container class="a">
     <mat-sidenav #sidenav opened="true" mode="side" class="sidenav">
       <mat-nav-list>
         <a mat-list-item routerLink="admin/dashboard">Dashboard</a>
@@ -29,7 +28,6 @@
     <mat-sidenav-container>
       <div class="sidenavContent">
         <router-outlet>
-
         </router-outlet>
       </div>
     </mat-sidenav-container>

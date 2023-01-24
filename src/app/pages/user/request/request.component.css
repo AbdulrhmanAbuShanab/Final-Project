@@ -1,17 +1,78 @@
 .container {
     width: 100%;
     height: 100%;
+    background-color: #673ab7;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    justify-items: center;
-    margin: 0 auto;
-    padding-top: 64px;
-    padding-bottom: 64px;
-    background-color: #ddd7ff;
-
+    padding-top: 4rem;
+    padding-bottom: 34.375rem;
 }
-.container > form > * {
-    width: 100%;
+h2{
+  color: #aa9fe7;
+  text-transform: uppercase;
+}
+form{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs{
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+
+.inputBox {
+  position: relative;
+  width: 300px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.inputBox input {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #aa9fe7;
+  border-radius: 5px;
+  background-color: #673ab7;
+  outline: none;
+  color: #aa9fe7;
+  font-size: 0.9em;
+  
+}
+.inputBox span {
+  position: absolute;
+
+  left: 0;
+  padding: 15px;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #aa9fe7;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+  color: #aa9fe7;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.7rem;
+  padding: 0 10px;
+  background-color: #673ab7;
+  letter-spacing: 0.2rem;
+}
+mat-error{
+  color: #aa9fe7;
+  font-weight: bold;
+}
+button{
+  width: 500px;
 }

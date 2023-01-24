@@ -8,7 +8,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { StartupsComponent } from './startups/startups.component';
 import { MaterialModule } from 'src/app/lib/components/material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
 
 
@@ -27,6 +27,7 @@ import { CompanydetailsComponent } from './companydetails/companydetails.compone
     UserRoutingModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

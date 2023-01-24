@@ -1,8 +1,8 @@
 <div class="container">
-<a routerLink="user/home">Home</a>
-<a routerLink="user/startups">StartUps</a>
-<a routerLink="user/map">Map</a>
-<a routerLink="user/aboutus">About Us</a>
-<a routerLink="user/contactus">Contact Us</a>
-<button routerLink="user/request">Apply Now</button>
+<a [class.navbar_change]="navbar" routerLink="user/home">Home</a>
+<a [class.navbar_change]="navbar" routerLink="user/startups">StartUps</a>
+<a [class.navbar_change]="navbar" routerLink="user/map">Map</a>
+<a [class.navbar_change]="navbar" routerLink="user/aboutus">About Us</a>
+<a [class.navbar_change]="navbar" routerLink="user/contactus">Contact Us</a>
+<button [class.button_change]="buttonC" routerLink="user/request">Apply Now</button>
 </div>

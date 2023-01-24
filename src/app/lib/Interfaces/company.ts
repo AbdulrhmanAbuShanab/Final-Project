@@ -7,7 +7,7 @@ export interface Company {
     logo: string,
     numOfEmployees: number,
     phone: string,
-    sector: string[],
+    sector: string,
     website: string,
     yearOfEstablishment: number
 }
