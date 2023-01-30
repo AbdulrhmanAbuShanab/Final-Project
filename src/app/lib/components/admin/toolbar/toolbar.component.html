@@ -1,34 +1,8 @@
-<p>
-    <mat-toolbar class="p" color="primary">
-      <div class="left">
-        <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h3 class="name">Admin Page</h3>
-    </div>
-    <div class="right">
-      <button mat-icon-button class="example-icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" (click)="signOut()" *ngIf="isUser">
-        <mat-icon>exit_to_app</mat-icon>
-      </button>
-    </div>
-    </mat-toolbar>
-  </p>
-  <mat-sidenav-container class="a">
-    <mat-sidenav #sidenav opened="true" mode="side" class="sidenav">
-      <mat-nav-list>
-        <a mat-list-item routerLink="admin/dashboard">Dashboard</a>
-        <a mat-list-item routerLink="admin/allcompanies">All Companies</a>
-        <a mat-list-item routerLink="admin/create">Create</a>
-        <a mat-list-item routerLink="admin/requests">Requests</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-container>
-      <div class="sidenavContent">
-        <router-outlet>
-        </router-outlet>
-      </div>
-    </mat-sidenav-container>
-  </mat-sidenav-container>
+<mat-toolbar [class.header_change]="header" color="primary">
+  <span *ngIf="!header"><img src="https://firebasestorage.googleapis.com/v0/b/startups-tech.appspot.com/o/White%20Logo.png?alt=media&token=6681fc6f-d532-42f3-87f4-679bf572c297"></span>
+  <span *ngIf="header"><img src="https://firebasestorage.googleapis.com/v0/b/startups-tech.appspot.com/o/Purble%20Logo.png?alt=media&token=01f0924e-a1ae-44c7-a5a8-2dc69518996f"></span>
+  <app-adnavbar></app-adnavbar>
+</mat-toolbar>
+
+      
+    

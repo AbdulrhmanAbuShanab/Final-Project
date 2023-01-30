@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { AngularFirestore } from "@angular/fire/compat/firestore";
-import { PageEvent } from "@angular/material/paginator";
 import { Company } from "src/app/lib/Interfaces/company";
 import { AdminFirebaseService } from "src/app/lib/services/admin-firebase.service";
 
@@ -10,20 +8,30 @@ import { AdminFirebaseService } from "src/app/lib/services/admin-firebase.servic
   styleUrls: ["./startups.component.css"],
 })
 export class StartupsComponent {
-  filters?: string;
   companies: Company[] = [];
-  constructor(private companiesService: AdminFirebaseService, private af: AngularFirestore) {}
+  companies2: Company[] = [];
+  constructor(
+    private companiesService: AdminFirebaseService,
+  ) {}
   ngOnInit(): void {
     this.getCompanies();
-
-
   }
   getCompanies() {
     this.companiesService.getCompanies().subscribe((response) => {
       this.companies = response;
+      this.companies2 = response;
     });
   }
-  filter(){
-    this.companiesService.getCompanies()
+
+  searchCompanies(se: string) {
+    this.companies = this.companies2;
+    this.companies = this.companies.filter((x) => x.companyName.includes(se));
+  }
+
+  filterCompanies(event: any) {
+    this.companies = this.companies2;
+    this.companies = this.companies.filter((x) =>
+      x.sector.includes(event.value)
+    );
   }
 }

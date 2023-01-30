@@ -1,8 +1,7 @@
 <div class="container">
-<a [class.navbar_change]="navbar" routerLink="user/home">Home</a>
-<a [class.navbar_change]="navbar" routerLink="user/startups">StartUps</a>
-<a [class.navbar_change]="navbar" routerLink="user/map">Map</a>
-<a [class.navbar_change]="navbar" routerLink="user/aboutus">About Us</a>
-<a [class.navbar_change]="navbar" routerLink="user/contactus">Contact Us</a>
-<button [class.button_change]="buttonC" routerLink="user/request">Apply Now</button>
+<a [class.navbar_change]="navbar" routerLink="user/home" (click)="scroll()">Home</a>
+<a [class.navbar_change]="navbar" routerLink="user/startups" (click)="scroll()">StartUps</a>
+<a [class.navbar_change]="navbar" routerLink="user/map" (click)="scroll()">Map</a>
+<a [class.navbar_change]="navbar" routerLink="user/aboutus" (click)="scroll()">About Us</a>
+<button [class.button_change]="buttonC" routerLink="user/request" (click)="scroll()">Apply Now</button>
 </div>

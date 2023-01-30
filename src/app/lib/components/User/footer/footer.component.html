@@ -8,17 +8,22 @@
       <p>Terms and Conditions | Privacy Policy | Cookies Policy</p>
       <p>Copyright © 2023 <a href="">TECH STARTUPS</a>. All rights reserved.</p>
     </div>
+    <div class="share">  
+       <p>Share on:</p>
+       <a data-href="websiteUrl" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://startups-tech.web.app/&amp;src=sdkpreparse"><i class="fa-brands fa-square-facebook"></i></a>
+       <a a href="https://twitter.com/intent/tweet?text=Check Out My New Website https://startups-tech.web.app/" target="_blank"><i class="fa-brands fa-square-twitter"></i></a> 
+        </div>
   </div>
   <div class="right">
     <div class="rightLeft">
       <h4>Navigate Our Site</h4>
       <div class="links">
-        <a routerLink="user/home">Home</a>
-        <a routerLink="user/startups">StartUps</a>
-        <a routerLink="user/map">Map</a>
-        <a routerLink="user/aboutus">About Us</a>
-        <a routerLink="user/contactus">Contact Us</a>
-        <a routerLink="user/request">Apply Now</a>
+        <a routerLink="user/home" (click)="scroll()">Home</a>
+        <a routerLink="user/startups" (click)="scroll()">StartUps</a>
+        <a routerLink="user/map" (click)="scroll()">Map</a>
+        <a routerLink="user/aboutus" (click)="scroll()">About Us</a>
+        <a routerLink="user/contactus" (click)="scroll()">Contact Us</a>
+        <a routerLink="user/request" (click)="scroll()">Apply Now</a>
       </div>
       <h4>Follow Us</h4>
       <div class="linksTwo">
@@ -50,16 +55,24 @@
       </div>
       <h4>Subscribe To Our Newsletter</h4>
       <div class="sub">
-        <form>
+        <form [formGroup]="forms">
           <div class="inputBox">
-            <input type="text" required />
+            <input type="text" required formControlName="name" />
             <span>Name</span>
+            <mat-error
+              *ngIf="forms.controls['name'].hasError?.('required') && (forms.controls['name'].dirty || forms.controls['name'].touched)"
+              >Your name is required</mat-error
+            >
           </div>
           <div class="inputBox">
-            <input type="text" required />
+            <input type="email" required formControlName="email" />
             <span>Email</span>
+            <mat-error
+              *ngIf="forms.controls['email'].hasError?.('required') && (forms.controls['email'].dirty || forms.controls['email'].touched)"
+              >Your email is required</mat-error
+            >
           </div>
-          <button>Submit</button>
+          <button [disabled]="!forms.valid" (click)="clear()">Submit</button>
         </form>
       </div>
     </div>

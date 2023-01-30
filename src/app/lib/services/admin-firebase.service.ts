@@ -3,8 +3,9 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
-import { from, Observable } from 'rxjs';
+import { from, map, Observable } from 'rxjs';
 import { Company } from '../Interfaces/company';
+import { Sector } from '../Interfaces/sector';
 
 
 @Injectable({
@@ -13,10 +14,20 @@ import { Company } from '../Interfaces/company';
 export class AdminFirebaseService {
   companiesCollection!: AngularFirestoreCollection<Company>;
   requestCollection!: AngularFirestoreCollection<Company>;
+  sectorsCollection!: AngularFirestoreCollection<Sector>;
 
   constructor(private firestore: AngularFirestore) {
     this.companiesCollection = this.firestore.collection('companies');
     this.requestCollection = this.firestore.collection('requests');
+    this.sectorsCollection = this.firestore.collection('sectors');
+  }
+  //sectors
+  getSectors(): Observable<Sector[]>{
+    return this.sectorsCollection.valueChanges({"idField":'uid'});
+  }
+  addSector(sector: Sector) {
+    let addeddSector = this.sectorsCollection?.add(sector);
+    return from(addeddSector);
   }
 
   //requests

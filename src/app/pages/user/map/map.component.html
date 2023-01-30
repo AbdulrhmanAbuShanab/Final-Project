@@ -1,0 +1,11 @@
+<div class="cardsContainer">
+  <div class="sectors" *ngFor="let group of groupedValues">
+    <span>{{ groupedKeys[groupedValues.indexOf(group)] }} </span>
+
+    <div class="cards" *ngFor="let company of group">
+      <a [routerLink]="['/user/companydetails', company.uid]"
+        ><img src="{{ company.logo }}" alt="company logo"
+      /></a>
+    </div>
+  </div>
+</div>

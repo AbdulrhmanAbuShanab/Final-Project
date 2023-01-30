@@ -23,7 +23,6 @@ export class AllCompaniesComponent implements OnInit {
   getCompanies(){
     this.companiesService.getCompanies()
     .subscribe((response)=> {
-      console.log(response);
       this.companies  = response;
     });
   }
@@ -35,7 +34,6 @@ export class AllCompaniesComponent implements OnInit {
        data: {id: id}
      });
      dialogRef.afterClosed().subscribe((result)=> {
-         console.log(result); 
          this.getCompanies();
      })
 

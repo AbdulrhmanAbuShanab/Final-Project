@@ -1,24 +1,27 @@
 .underHeader {
-  background-color: #673ab7;
+  background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
   width: 100%;
   height: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 64px;
+  padding-top: 4rem;
 }
-.underHeader h1,
-.underHeader h3 {
-  color: white;
+.text h1,
+.text h3 {
+  color: #ddd7ff;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.1rem;
 }
 .underHeader h1 {
-  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+  text-transform: uppercase;
+  
 }
 .text {
   text-align: center;
-  margin-left: 10px;
+  margin-left: .625rem;
 }
 .numbers {
   background-color: #3c2f80;
@@ -46,7 +49,7 @@
   font-weight: 500;
 }
 .apply {
-  padding-bottom: 500px;
+  padding-bottom: 1.875rem;
   width: 100%;
   height: 10rem;
   background-color: #3c2f80;
@@ -54,7 +57,7 @@
   align-items: center;
   justify-content: center;
   gap: 15rem;
-  border-top: 3px solid #673ab7;
+  border-top: .1875rem solid #673ab7;
 }
 .texts {
   display: flex;
@@ -65,20 +68,20 @@
   font-family: "Open Sans", sans-serif;
 }
 button {
-  margin-bottom: 2px;
-  width: 150px;
-  height: 35px;
-  border: 1px solid #ddd7ff;
+  margin-bottom: .125rem;
+  width: 9.375rem;
+  height: 2.1875rem;
+  border: .0625rem solid #ddd7ff;
   color: #ddd7ff;
   font-size: medium;
   font-weight: 500;
   background-color: #3c2f80;
-  border-radius: 4px;
+  border-radius: .25rem;
   transition:  1s;
   outline: none;
 }
 button:hover {
-  box-shadow: inset 150px 0 0 0 #ddd7ff;
+  box-shadow: inset 9.375rem 0 0 0 #ddd7ff;
   color: #3c2f80;
   cursor: pointer;
 }

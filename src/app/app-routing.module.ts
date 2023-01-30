@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { hostname } from 'os';
 import { AuthGuard } from './lib/gaurds/auth.guard';
 import { NotloggedinGuard } from './lib/gaurds/notloggedin.guard';
 import { HomeComponent } from './pages/user/home/home.component';
@@ -13,7 +14,7 @@ canActivate: [NotloggedinGuard]
 canActivate: [AuthGuard]
 },
 {path: 'user', loadChildren: ()=> import('./pages/user/user.module').then((m)=>m.UserModule)},
-{ path: '**', component:  HomeComponent}
+{ path: '**', component:  HomeComponent},
 
 ];
 

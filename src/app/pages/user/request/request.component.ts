@@ -1,67 +1,97 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { Company } from 'src/app/lib/Interfaces/company';
-import { AdminFirebaseService } from 'src/app/lib/services/admin-firebase.service';
+import { Component } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { Observable, Subscription } from "rxjs";
+import { Company } from "src/app/lib/Interfaces/company";
+import { Sector } from "src/app/lib/Interfaces/sector";
+import { AdminFirebaseService } from "src/app/lib/services/admin-firebase.service";
+import { FilestorageService } from "src/app/lib/services/storage/filestorage.service";
 
 @Component({
-  selector: 'app-request',
-  templateUrl: './request.component.html',
-  styleUrls: ['./request.component.css']
+  selector: "app-request",
+  templateUrl: "./request.component.html",
+  styleUrls: ["./request.component.css"],
 })
 export class RequestComponent {
-  
   requestForm = new FormGroup({
-    companyName: new FormControl('', [Validators.required]),
-    city: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    founder: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required]),
-    sector: new FormControl('', [Validators.required]),
-    logo: new FormControl('', [Validators.required]),
-    website: new FormControl('', [Validators.required]),    
-    numOfEmployees: new FormControl<number | ''>('', [Validators.required, Validators.min(1)]),
-    yearOfEstablishment: new FormControl<number | ''>('', [Validators.required, Validators.min(1)]),
-  })
+    companyName: new FormControl("", [Validators.required]),
+    city: new FormControl("", [Validators.required]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    founder: new FormControl("", [Validators.required]),
+    phone: new FormControl("", [Validators.required]),
+    sector: new FormControl("", [Validators.required]),
+    logo: new FormControl("", [Validators.required]),
+    website: new FormControl("", [Validators.required]),
+    numOfEmployees: new FormControl<number | "">("", [
+      Validators.required,
+      Validators.min(1),
+    ]),
+    yearOfEstablishment: new FormControl<number | "">("", [
+      Validators.required,
+      Validators.min(1),
+    ]),
+  });
   request: Company = {
-    city: '',
-    companyName: '',
-    email: '',
-    founder: '',
-    logo: '',
+    city: "",
+    companyName: "",
+    email: "",
+    founder: "",
+    logo: "",
     numOfEmployees: 0,
-    phone: '',
-    sector: '',
-    website: '',
+    phone: "",
+    sector: "",
+    website: "",
     yearOfEstablishment: 0,
   };
-  requests:Company[] = [];
-  requests$? : Observable<Company[]>;
+  requests: Company[] = [];
+  requests$?: Observable<Company[]>;
   sub?: Subscription;
-  constructor(private requestService: AdminFirebaseService, private router: Router){
-
-  }
+  sectors: Sector[] = [];
+  downloadUrl?: string;
+  showSuccessAlert: boolean = false;
+  constructor(
+    private requestService: AdminFirebaseService,
+    private router: Router,
+    private storage: FilestorageService
+  ) {}
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
+  //Getting all companies
   ngOnInit(): void {
-   this.requests$  =this.requestService.getRequests();
+    this.requests$ = this.requestService.getRequests();
+    this.getSectors();
   }
-
-  submit(){
-    this.requestService.acceptRequest(this.request).subscribe({
-      next: (response)=> {
-        this.router.navigate(['user/home']);  
-      },
-      error: (error)=> {
-        alert(JSON.stringify(error));
-      },
-      complete: ()=> console.log('completed')
+  //Showing success alert 
+  onSubmit() {
+    this.showSuccessAlert = true;
+    setTimeout(() => {
+      this.showSuccessAlert = false;
+    }, 2000);
+    setTimeout(() => {
+      this.router.navigate(["user/home"]);
+    }, 3000);
+  }
+  //Getting sectors to display them in the select options
+  getSectors() {
+    this.requestService.getSectors().subscribe((response) => {
+      this.sectors = response;
     });
-      //navigate
+  }
+  //Submiting the request
+  submit() {
+    this.requestService.acceptRequest({
+      ...(this.requestForm.value as Company),
+    });
+  }
+  //uploading the logo
+  upload(event: Event) {
+    let file = (event.target as HTMLInputElement)?.files?.[0];
+    if (file) {
+      this.storage.uploadStartupLogo(file).subscribe((value) => {
+        this.downloadUrl = value;
+        this.request.logo = value;
+      });
     }
   }
-
-  
-
+}

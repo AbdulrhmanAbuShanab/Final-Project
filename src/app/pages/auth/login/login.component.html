@@ -1,20 +1,30 @@
 <div class="container">
-    <p>Login</p>
-    <form [formGroup]="form" (ngSubmit)="submit()" >
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput type="text" formControlName="email">
-            <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
-            <mat-error *ngIf="email?.hasError('email')">Email format is incorrect</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input matInput type="password" formControlName="password">
-            <mat-error *ngIf="password?.errors?.['required']">Password is required</mat-error>
-            <mat-error *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters</mat-error>
-        </mat-form-field>   
+  <p>Login</p>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="inputBox">
+      <input type="email" formControlName="email" />
+      <span>Email</span>
+      <mat-error
+        *ngIf="form.controls['email'].hasError?.('required') && (form.controls['email'].dirty || form.controls['email'].touched)"
+        >email is required</mat-error
+      >
+    </div>
+    <div class="inputBox">
+      <input type="password" formControlName="password" />
+      <span>Password</span>
+      <mat-error
+        *ngIf="form.controls['password'].hasError?.('required') && (form.controls['password'].dirty || form.controls['password'].touched)"
+        >email is required</mat-error
+      >
+    </div>
 
-
-        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Login</button>    
-    </form>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="form.invalid"
+    >
+      Login
+    </button>
+  </form>
 </div>

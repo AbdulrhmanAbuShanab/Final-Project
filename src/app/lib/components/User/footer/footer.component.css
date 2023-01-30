@@ -1,5 +1,5 @@
 .customToolbar {
-  height: 500px;
+  height: 31.25rem;
   display: flex;
   background: linear-gradient(to left, #aa9fe7 50%, #bbafff 50%);
 }
@@ -31,6 +31,19 @@ p:last-of-type {
 a {
   color: #673ab7;
 }
+.share {
+  display: flex;
+  gap: .3125rem;
+}
+.share p {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.share a:hover {
+  color: #3c2f80;
+  transition: color 1s;
+  cursor: pointer;
+}
 .right {
   height: 100%;
   width: 50%;
@@ -48,10 +61,10 @@ a {
   content: "";
   position: absolute;
   background-color: #673ab7;
-  height: 2px;
+  height: .125rem;
   width: 0;
   left: 0;
-  bottom: -1px;
+  bottom: -0.0625rem;
   transition: 0.4s;
 }
 .links a:hover::after {
@@ -70,13 +83,13 @@ a {
 .links {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 .linksTwo {
   display: flex;
-  gap: 5px;
+  gap: .3125rem;
 }
-.linksTwo a:hover{
+.linksTwo a:hover {
   color: #3c2f80;
   transition: color 1s;
 }
@@ -87,8 +100,8 @@ a {
   align-items: flex-start;
   justify-content: center;
 }
-.rightRight h4{
-    font-weight: 700;
+.rightRight h4 {
+  font-weight: 700;
 }
 .contactDetails {
   display: flex;
@@ -107,31 +120,31 @@ a {
 .sub {
   display: flex;
   flex-direction: column;
-  
 }
 .inputBox {
   position: relative;
-  width: 250px;
-  height: 60px;
+  width: 15.625rem;
+  height: 3.75rem;
   display: flex;
   flex-direction: column;
- 
 }
 .inputBox input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #673ab7;
-  border-radius: 5px;
+  padding: .625rem;
+  border: .0625rem solid #673ab7;
+  border-radius: .3125rem;
   background-color: #aa9fe7;
   outline: none;
   color: #673ab7;
   font-size: 0.7em;
-  margin-top: 10px;
+}
+.inputBox:first-of-type {
+  margin-bottom: .9375rem;
 }
 .inputBox span {
   position: absolute;
   left: 0;
-  padding: 13px;
+  padding: .3125rem .9375rem;
   pointer-events: none;
   font-size: 1rem;
   color: #673ab7;
@@ -139,29 +152,33 @@ a {
   transition: 0.5s;
 }
 .inputBox input:valid ~ span,
-.inputBox input:focus ~ span{
+.inputBox input:focus ~ span {
   color: #3c2f80;
-  transform: translateX(10px) translateY(-7px);
+  transform: translateX(.625rem) translateY(-0.9375rem);
   font-size: 0.7rem;
-  padding: 0 10px;
+  padding: 0 .625rem;
   background-color: #aa9fe7;
   letter-spacing: 0.2rem;
 }
-button{
-    margin-bottom: 2px;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #bbafff;
-    color: #FFFFFF;
-    font-size: small;
-    font-weight: 500;
-    background-color: #673ab7;
-    border-radius: 4px;
-    transition: ease-out 0.4s;
-    outline: none;
-  }
-  button:hover{
-    box-shadow: inset 150px 0 0 0 #bbafff;
-    color: #673ab7;
-    cursor:pointer;
-  }
+button {
+  margin-bottom: .125rem;
+  width: 6.25rem;
+  height: 1.875rem;
+  border: .0625rem solid #bbafff;
+  color: #ffffff;
+  font-size: small;
+  font-weight: 500;
+  background-color: #673ab7;
+  border-radius: .25rem;
+  transition: ease-out 0.4s;
+  outline: none;
+}
+button:hover {
+  box-shadow: inset 9.375rem 0 0 0 #bbafff;
+  color: #673ab7;
+  cursor: pointer;
+}
+mat-error {
+  color: #673ab7;
+  font-size: 0.7rem;
+}

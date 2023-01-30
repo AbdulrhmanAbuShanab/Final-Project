@@ -1,12 +1,11 @@
-
 .container{
     padding-top: 4.375rem;
-    padding-bottom: 32.5rem;
+    padding-bottom: 1.875rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #ddd7ff;
-    color: #3c2f80;
+    background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
+    color: #bbafff;
 }
 img{
     width: 37.5rem;
@@ -14,7 +13,7 @@ img{
     object-fit: contain;
 }
 span, p{
-    font-size: 16px;
+    font-size: 1rem;
 }
 span{
     font-weight: 700;
@@ -31,16 +30,17 @@ button{
     width: 9.375rem;
     height: 2.1875rem;
     border: .0625rem solid #bbafff;
-    color: #FFFFFF;
+    color: #bbafff;
     font-size: medium;
     font-weight: 500;
-    background-color: #673ab7;
+    background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
     border-radius: .25rem;
     transition: ease-out 0.4s;
     outline: none;
   }
   button:hover{
     box-shadow: inset 9.375rem 0 0 0 #bbafff;
+    color: #673ab7;
     cursor: pointer;
   }
   

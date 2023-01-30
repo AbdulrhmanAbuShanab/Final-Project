@@ -1,6 +1,6 @@
 <div class="container" *ngIf="request$ | async as request">
     <h2>Editing StartUp Request Before Adding it</h2>
-    <form #form="ngForm" (ngSubmit)="add(form.value)">
+    <form #form="ngForm">
         <mat-form-field>
             <mat-label>Enter Company Name</mat-label>
             <input  required  matInput name="companyName" [(ngModel)]='request.companyName' >
@@ -61,6 +61,6 @@
             <mat-error>company year of establishment is required</mat-error>
         </mat-form-field>
         
-          <button [disabled]="form.invalid" mat-raised-button color="primary">Submit</button>
+          <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="submit()">Submit</button>
     </form>
 </div>

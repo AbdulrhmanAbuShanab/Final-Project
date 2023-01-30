@@ -1,6 +1,6 @@
 export interface Company {
     uid?: string,
-    city: string,
+    city?: string ,
     companyName:string,
     email: string,
     founder: string,
@@ -11,4 +11,3 @@ export interface Company {
     website: string,
     yearOfEstablishment: number
 }
-

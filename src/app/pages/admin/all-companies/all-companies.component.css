@@ -1,0 +1,24 @@
+table {
+  padding-top: 4rem;
+  background: #673ab7;
+}
+th {
+  color: #f0f0f0;
+  border-color: #f0f0f0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+}
+td {
+  color: #f0f0f0;
+  font-size: 0.8rem;
+  border-color: #f0f0f0;
+}
+a{
+    color: #f0f0f0;
+}
+img{
+  object-fit: contain;
+}

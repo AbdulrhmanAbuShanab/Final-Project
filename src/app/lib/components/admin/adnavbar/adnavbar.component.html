@@ -1,0 +1,10 @@
+<div class="container">
+    <a [class.navbar_change]="navbar" routerLink="admin/allcompanies" (click)="scroll()">All Companies</a>
+    <a [class.navbar_change]="navbar" routerLink="admin/create" (click)="scroll()">New Company</a>
+    <a [class.navbar_change]="navbar" routerLink="admin/requests" (click)="scroll()">Requests</a>
+    <a [class.navbar_change]="navbar" routerLink="admin/sectors" (click)="scroll()">Sectors</a>
+    <a [class.navbar_change]="navbar" routerLink="admin/creates" (click)="scroll()">New Sectors</a>
+    <button [class.button_change]="buttonC" (click)="signOut()" *ngIf="isUser">
+        Sign Out
+      </button>
+    </div>

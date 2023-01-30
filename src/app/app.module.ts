@@ -11,14 +11,12 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HeaderComponent } from './lib/components/User/header/header.component';
 import { FooterComponent } from './lib/components/User/footer/footer.component';
 import { NavbarComponent } from './lib/components/User/navbar/navbar.component';
-import { LinksComponent } from './lib/components/User/links/links.component';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './lib/components/admin/toolbar/toolbar.component';  
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdnavbarComponent } from './lib/components/admin/adnavbar/adnavbar.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent, LinksComponent, ToolbarComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent, ToolbarComponent, AdnavbarComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -29,10 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    FontAwesomeModule,
-    
-
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

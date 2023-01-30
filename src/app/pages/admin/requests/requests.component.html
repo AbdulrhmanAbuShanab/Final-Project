@@ -1,5 +1,5 @@
+<div class="container">
 <table mat-table [dataSource]="requests" class="mat-elevation-z8">
-
     <!-- Id Column -->
     <ng-container matColumnDef="city">
       <th mat-header-cell *matHeaderCellDef> City </th>
@@ -61,4 +61,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  
+</div>

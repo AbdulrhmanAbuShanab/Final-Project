@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
-import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { RequestComponent } from './request/request.component';
@@ -15,7 +14,6 @@ const routes: Routes = [
 {path: 'map', component: MapComponent},
 {path: 'request', component: RequestComponent},
 {path: 'aboutus', component: AboutusComponent},
-{path: 'contactus', component: ContactusComponent},
 {path: 'companydetails/:id', component: CompanydetailsComponent}
 ];
 

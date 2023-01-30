@@ -1,3 +1,4 @@
+import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, switchMap } from "rxjs";
@@ -15,7 +16,8 @@ export class CompanydetailsComponent {
   id!: string;
   constructor(
     private route: ActivatedRoute,
-    private companyService: AdminFirebaseService
+    private companyService: AdminFirebaseService,
+    private location: Location
   ) {
     this.company$ = this.route.paramMap.pipe(
       switchMap((value) => {
@@ -23,5 +25,8 @@ export class CompanydetailsComponent {
         return this.companyService.getCompanyById(this.id);
       })
     );
+  }
+  goBack() {
+    this.location.back();
   }
 }

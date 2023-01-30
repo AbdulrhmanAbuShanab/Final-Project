@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/lib/services/auth/auth.service';
 
@@ -8,20 +8,29 @@ import { AuthService } from 'src/app/lib/services/auth/auth.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
-  isUser: boolean = false
-  constructor(private angularAuth: AuthService, private router: Router){
-  }
+  isUser: boolean = false;
+  
+  constructor(private angularAuth: AuthService, private router: Router) {}
   ngOnInit(): void {
-    this.angularAuth.user.subscribe(user=>{
-      if(user) this.isUser = true;
+    this.angularAuth.user.subscribe((user) => {
+      if (user) this.isUser = true;
       else this.isUser = false;
-    })
+    });
   }
-
+  //SignOut function
   signOut(){  
     this.angularAuth.signOut().then(()=>{
-      this.router.navigate(['auth/login']);
-
+      this.router.navigate(['user/home']);
     })
   } 
+  header = false;
+  @HostListener("document:scroll")
+  scrollFunction(){
+    if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
+      this.header = true;
+    }
+    else{
+      this.header = false;
+    }
+  }
 }

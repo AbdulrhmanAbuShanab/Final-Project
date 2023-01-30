@@ -1,25 +1,72 @@
 .container {
   width: 100%;
-  height: 82vh;
+  height: 34.375rem;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   padding-top: 4rem;
-  padding-bottom: 31.25rem;
-  background-color: #ddd7ff;
+  padding-bottom: 2.5rem;
+  background: linear-gradient(0.25turn, #673ab7, #5b3898, #673ab7);
 }
-
-.container > form > * {
+.container form {
   width: 100%;
+  height: 15rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .container > p {
-  color: #3c2f80;
+  color: #aa9fe7;
   font-weight: 700;
   font-size: x-large;
-  margin-bottom: 32px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
-::ng-deep .ss{
-    background-color: blue;
+.inputBox {
+  position: relative;
+  width: 25rem;
+  height: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .625rem;
+}
+.inputBox input {
+  width: 100%;
+  height: 2.8rem;
+  border: .0625rem solid #aa9fe7;
+  border-radius: .3125rem;
+  background-color: #673ab7;
+  outline: none;
+  color: #aa9fe7;
+  font-size: .9rem;
+}
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: .9375rem;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #aa9fe7;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.inputBox input ~ span{
+  color: #aa9fe7;
+  transform: translateX(.625rem) translateY(-0.4375rem);
+  font-size: .7rem;
+  padding: 0 .625rem;
+  background: linear-gradient(0.25turn, #673ab7, #5b3898, #673ab7);
+  letter-spacing: .2rem;
+}
+mat-error {
+  color: #aa9fe7;
+  font-weight: bold;
+}
+button{
+  width: 20rem;
+  align-self: center;
 }

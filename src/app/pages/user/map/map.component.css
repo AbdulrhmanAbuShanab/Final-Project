@@ -1,0 +1,44 @@
+.cardsContainer{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding-top: 6.25rem;
+  padding-bottom: 1.875rem;
+}
+.sectors{
+  position: relative;
+  width: 34.375rem;
+  margin-left: .9375rem;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-evenly;
+  border: .0625rem solid #aa9fe7;
+  border-radius: .3125rem;
+}
+.cards{
+  display: flex;
+  padding: 1rem;
+  padding-top: 1.5625rem;
+}
+span{
+  position: absolute;
+  font-size: 1rem;
+  padding: .3125rem .9375rem .3125rem .9375rem;
+  color: #aa9fe7;
+  transform: translateX(.625rem) translateY(-0.9375rem);
+  background: #4a2d7a;
+  border-radius: .4375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  width: 90%;
+}
+img{
+  width: 4.6875rem;
+  height: 4.6875rem;
+  object-fit: contain;
+}

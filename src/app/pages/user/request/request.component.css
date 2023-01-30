@@ -1,59 +1,90 @@
 .container {
-    width: 100%;
-    height: 100%;
-    background-color: #673ab7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 4rem;
-    padding-bottom: 34.375rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 1.875rem;
 }
-h2{
+h2 {
   color: #aa9fe7;
   text-transform: uppercase;
 }
-form{
-    width: 50rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+form {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.inputs{
+.inputs {
   width: 100%;
-  height: 400px;
+  height: 25rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   flex-direction: column;
   flex-wrap: wrap;
-  
 }
-
+.image {
+  display: none;
+}
+.requestLogo {
+  position: absolute;
+  width: 3.125rem;
+  height: 3.125rem;
+  right: 0;
+}
+label {
+  position: absolute;
+  background-color: #673ab7;
+  width: 100%;
+  height: 1.25rem;
+  padding: 0.9375rem 0.3125rem 0.9375rem 0.9375rem;
+  border: 0.0625rem solid #aa9fe7;
+  border-radius: 0.3125rem;
+  outline: none;
+  color: #aa9fe7;
+  font-size: 1rem;
+}
 .inputBox {
   position: relative;
-  width: 300px;
-  height: 70px;
+  width: 20rem;
+  height: 4.375rem;
   display: flex;
   flex-direction: column;
- 
 }
 .inputBox input {
   width: 100%;
-  height: 30px;
-  padding: 10px;
-  border: 1px solid #aa9fe7;
-  border-radius: 5px;
+  height: 1.875rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid #aa9fe7;
+  border-radius: 0.3125rem;
   background-color: #673ab7;
   outline: none;
   color: #aa9fe7;
-  font-size: 0.9em;
-  
+  font-size: 0.9rem;
+}
+.inputBox select {
+  width: 21.3125rem;
+  height: 3.225rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid #aa9fe7;
+  border-radius: 0.3125rem;
+  background-color: #673ab7;
+  outline: none;
+  color: #aa9fe7;
+  font-size: 0.9rem;
+  overflow: auto;
+}
+option {
+  overflow-y: scroll;
 }
 .inputBox span {
   position: absolute;
-
   left: 0;
-  padding: 15px;
+  padding: 0.9375rem;
   pointer-events: none;
   font-size: 1rem;
   color: #aa9fe7;
@@ -61,18 +92,36 @@ form{
   transition: 0.5s;
 }
 .inputBox input:valid ~ span,
-.inputBox input:focus ~ span{
+.inputBox select:valid ~ span {
   color: #aa9fe7;
-  transform: translateX(10px) translateY(-7px);
+  transform: translateX(0.625rem) translateY(-0.4375rem);
   font-size: 0.7rem;
-  padding: 0 10px;
-  background-color: #673ab7;
+  padding: 0 .625rem;
+  background: linear-gradient(0.25turn, #673ab7, #5b3898, #673ab7);
+
   letter-spacing: 0.2rem;
 }
-mat-error{
+mat-error {
   color: #aa9fe7;
   font-weight: bold;
 }
-button{
-  width: 500px;
+button {
+  width: 31.25rem;
+}
+.selectContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 15.625rem;
+  height: 3.125rem;
+}
+.alert {
+  margin-top: 1.875rem;
+  padding-bottom: 2.5rem;
+}
+.alert p {
+  color: white;
+  border: .0625rem solid white;
+  border-radius: .3125rem;
+  padding: .625rem;
 }

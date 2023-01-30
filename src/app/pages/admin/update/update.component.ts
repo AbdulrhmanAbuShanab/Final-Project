@@ -30,6 +30,6 @@ export class UpdateComponent {
   }
   deleteCompany(company: any){
     this.companyService.updateCompany(this.id, company);
-    this.router.navigate(['admin/allCompanies']);
+    this.router.navigate(['admin/allcompanies']);
   }
 }

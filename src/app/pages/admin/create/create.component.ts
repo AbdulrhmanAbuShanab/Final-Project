@@ -4,6 +4,8 @@ import { Observable, Subscription } from "rxjs";
 import { AdminFirebaseService } from "src/app/lib/services/admin-firebase.service";
 import { Company } from "src/app/lib/Interfaces/company";
 import { FilestorageService } from "src/app/lib/services/storage/filestorage.service";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Sector } from "src/app/lib/Interfaces/sector";
 
 @Component({
   selector: "app-create",
@@ -11,6 +13,24 @@ import { FilestorageService } from "src/app/lib/services/storage/filestorage.ser
   styleUrls: ["./create.component.css"],
 })
 export class CreateComponent {
+  createCompany = new FormGroup({
+    companyName: new FormControl("", [Validators.required]),
+    city: new FormControl("", [Validators.required]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    founder: new FormControl("", [Validators.required]),
+    phone: new FormControl("", [Validators.required]),
+    sector: new FormControl("", [Validators.required]),
+    logo: new FormControl("", [Validators.required]),
+    website: new FormControl("", [Validators.required]),
+    numOfEmployees: new FormControl<number | "">("", [
+      Validators.required,
+      Validators.min(1),
+    ]),
+    yearOfEstablishment: new FormControl<number | "">("", [
+      Validators.required,
+      Validators.min(1),
+    ]),
+  });
   company: Company = {
     city: "",
     companyName: "",
@@ -26,7 +46,9 @@ export class CreateComponent {
   companies: Company[] = [];
   companies$?: Observable<Company[]>;
   sub?: Subscription;
+  sectors: Sector[] = [];
   downloadUrl?: string;
+  showSuccessAlert: boolean = false;
   constructor(
     private storage: FilestorageService,
     private companiesService: AdminFirebaseService,
@@ -35,29 +57,53 @@ export class CreateComponent {
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
+
   ngOnInit(): void {
     this.companies$ = this.companiesService.getCompanies();
+    this.getSectors();
   }
-
-  submit() {
-    this.companiesService.addCompany(this.company).subscribe({
-      next: (response) => {
-        this.router.navigate(["admin/allcompanies"]);
-      },
-      error: (error) => {
-        alert(JSON.stringify(error));
-      },
-      complete: () => console.log("completed"),
+  //Showing success alert
+  // onSubmit() {
+  //   this.showSuccessAlert = true;
+  //   setTimeout(() => {
+  //     this.showSuccessAlert = false;
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     this.router.navigate(["admin/allcompanies"]);
+  //   }, 3000);
+  // }
+  //Getting sectors to display them in the select options
+  getSectors() {
+    this.companiesService.getSectors().subscribe((response) => {
+      this.sectors = response;
     });
-    //navigate
   }
-
+  //Submiting the request
+  submit() {
+      this.companiesService.addCompany(
+        {...this.createCompany.value as Company}
+  
+      ).subscribe({
+        next: (response)=> {
+          this.router.navigate(['admin/allcompanies']);  
+        },
+        error: (error)=> {
+          alert(JSON.stringify(error));
+        },
+        complete: ()=> console.log('completed')
+      });
+        //navigate
+      }
+  
+  //Uploading image to firestorage
   upload(event: Event) {
     let file = (event.target as HTMLInputElement)?.files?.[0];
     if (file) {
-      this.storage.uploadFile(file).subscribe((value) => {
-        this.downloadUrl = value;
-        this.company.logo = value;
+      this.storage.uploadStartupLogo(file).subscribe((value) => {
+       console.log(value);
+       this.downloadUrl=value;
+       this.createCompany.controls.logo.setValue(value);
+       console.log(this.company, 'after update');
       });
     }
   }

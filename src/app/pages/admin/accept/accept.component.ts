@@ -25,7 +25,6 @@ export class AcceptComponent {
   companies:Company[] = [];
   companies$? : Observable<Company[]>;
   sub?: Subscription;
-
   request?: Company;
   request$!: Observable<Company | undefined>;
   id!: string;
@@ -34,16 +33,14 @@ export class AcceptComponent {
     private router: Router){
 
     this.request$ = this.route.paramMap.pipe(
-
       switchMap((value)=> {
         console.log(value);
         this.id = value.get('id')+'';
         return this.requestService.getRequestById(this.id)
       }
-
       )
     )
-    
+  
   }
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
@@ -51,15 +48,16 @@ export class AcceptComponent {
   ngOnInit(): void {
    this.companies$  =this.requestService.getCompanies();
   }
-  add(company: Company){
-  this.requestService.addCompany(this.company).subscribe({
-    next: (response)=> {
-      this.router.navigate(['admin/allCompanies']);  
-    },
-    error: (error)=> {
-      alert(JSON.stringify(error));
-    },
-    complete: ()=> console.log('completed')
-  });
-}
+  submit() {
+    this.requestService.addCompany(this.company).subscribe({
+      next: (response) => {
+        this.router.navigate(["admin/allcompanies"]);
+      },
+      error: (error) => {
+        alert(JSON.stringify(error));
+      },
+      complete: () => console.log("completed"),
+    });
+    //navigate
+  }
 }

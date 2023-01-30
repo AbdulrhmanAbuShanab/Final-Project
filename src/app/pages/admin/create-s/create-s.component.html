@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Create a Sector</h2>
+    <form [formGroup]="createSector">
+      <div class="inputs">
+        <div class="inputBox">
+          <input name="companyName" formControlName="sectorName" />
+          <span>Sector Name</span>
+          <mat-error
+            *ngIf="createSector.controls['sectorName'].hasError?.('required') && (createSector.controls['sectorName'].dirty || createSector.controls['sectorName'].touched)"
+            >sector name is required</mat-error
+          >
+        </div>        
+  
+        <div class="inputBox">
+          <label for="logo"><i class="fa-solid fa-image"></i>Choose Image</label>
+          <input class="image" type="file" accept="image/*" id="logo" name="logo" formControlName="sectorLogo" (change)="upload($event)"/>
+          <img *ngIf="sectorLogoUrl" [src]="sectorLogoUrl" class="sectorLogo">
+          <span>Sector Logo</span>
+          <mat-error
+            *ngIf="createSector.controls['sectorLogo'].hasError?.('required') && (createSector.controls['sectorLogo'].dirty || createSector.controls['sectorLogo'].touched)"
+            >sector logo is required</mat-error
+          >
+        </div>
+      </div>
+  
+      <button
+        [disabled]="createSector.invalid"
+        mat-raised-button
+        color="primary"
+        (click)="submit()"
+      >
+        Submit
+      </button>
+    </form>
+    <div class="alert" *ngIf="showSuccessAlert" >
+      <p>You Have Successfully created A New Sector, Thank You</p>
+    </div>
+  </div>
+  
