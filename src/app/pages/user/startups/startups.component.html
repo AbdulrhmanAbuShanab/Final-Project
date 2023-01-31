@@ -2,7 +2,7 @@
   <div class="search">
     <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
     <input
-    #inp
+      #inp
       type="text"
       id="companyName"
       placeholder="Search for a company..."
@@ -11,16 +11,15 @@
   </div>
   <select (change)="filterCompanies($event.target)">
     <option value="" disabled selected hidden>Filter By Sector</option>
-    <option  class="africa" value="Agritech">Agritech</option>
+    <option class="africa" value="Agritech">Agritech</option>
     <option class="america" value="Cyber Security">Cyber Security</option>
     <option class="asia" value="asia">Asia</option>
     <option class="europe" value="europe">Europe</option>
     <option class="oceania" value="oceania">Oceania</option>
   </select>
-  </div>
+</div>
 <div class="cardsContainer">
-  
-  <div class="cards" *ngFor="let company of companies"> 
+  <div class="cards" *ngFor="let company of companies">
     <img src="{{ company.logo }}" alt="company logo" />
     <a [routerLink]="['/user/companydetails', company.uid]">{{
       company.companyName

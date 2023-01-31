@@ -1,9 +1,129 @@
 .container {
-    width: 700px;
+    width: 100%;
+    height: 40.1rem;
+    background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-}
-.container > form > * {
+    align-items: center;
+    padding-top: 5rem;
+    
+   
+  }
+  h2 {
+    color: #f0f0f0;
+    text-transform: uppercase;
+  }
+  form {
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inputs {
     width: 100%;
-}
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .image {
+    display: none;
+  }
+  .requestLogo {
+    position: absolute;
+    width: 3.125rem;
+    height: 3.125rem;
+    right: 0;
+  }
+  label {
+    position: absolute;
+    background-color: #673ab7;
+    width: 100%;
+    height: 1.25rem;
+    padding: 0.9375rem 0.3125rem 0.9375rem 0.9375rem;
+    border: 0.0625rem solid #f0f0f0;
+    border-radius: 0.3125rem;
+    outline: none;
+    color: #f0f0f0;
+    font-size: 1rem;
+  }
+  .inputBox {
+    position: relative;
+    width: 20rem;
+    height: 4.375rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .inputBox input {
+    width: 100%;
+    height: 1.875rem;
+    padding: 0.625rem;
+    border: 0.0625rem solid #f0f0f0;
+    border-radius: 0.3125rem;
+    background-color: #673ab7;
+    outline: none;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+  }
+  .inputBox select {
+    width: 21.3125rem;
+    height: 3.225rem;
+    padding: 0.625rem;
+    border: 0.0625rem solid #f0f0f0;
+    border-radius: 0.3125rem;
+    background-color: #673ab7;
+    outline: none;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+    overflow: auto;
+  }
+  option {
+    overflow-y: scroll;
+  }
+  .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 0.9375rem;
+    pointer-events: none;
+    font-size: 1rem;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  .inputBox input ~ span,
+  .inputBox select ~ span {
+    color: #f0f0f0;
+    transform: translateX(0.625rem) translateY(-0.4375rem);
+    font-size: 0.7rem;
+    padding: 0 .625rem;
+    background: linear-gradient(0.25turn, #673ab7, #5b3898, #673ab7);
+  
+    letter-spacing: 0.2rem;
+  }
+  mat-error {
+    color: #f0f0f0;
+    font-weight: bold;
+  }
+  button {
+    width: 31.25rem;
+  }
+  .selectContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 15.625rem;
+    height: 3.125rem;
+  }
+  .alert {
+    margin-top: 1.875rem;
+    padding-bottom: 2.5rem;
+  }
+  .alert p {
+    color: #f0f0f0;
+    border: .0625rem solid #f0f0f0;
+    border-radius: .3125rem;
+    padding: .625rem;
+  }
+  

@@ -22,10 +22,10 @@ export class MapComponent {
       this.companies = response;
       var groupedCompanies = this.companies.reduce((arr: any, currentItem) => {
         let key = currentItem.sector;
-        if (!arr[key]) {
-          arr[key] = [];
+        if (!arr[key!]) {
+          arr[key!] = [];
         }
-        arr[key].push(currentItem);
+        arr[key!].push(currentItem);
         return arr;
       }, {});
       this.groupedValues = Object.values(groupedCompanies);

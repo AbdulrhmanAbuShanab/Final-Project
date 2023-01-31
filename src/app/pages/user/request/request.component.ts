@@ -62,16 +62,6 @@ export class RequestComponent {
     this.requests$ = this.requestService.getRequests();
     this.getSectors();
   }
-  //Showing success alert 
-  onSubmit() {
-    this.showSuccessAlert = true;
-    setTimeout(() => {
-      this.showSuccessAlert = false;
-    }, 2000);
-    setTimeout(() => {
-      this.router.navigate(["user/home"]);
-    }, 3000);
-  }
   //Getting sectors to display them in the select options
   getSectors() {
     this.requestService.getSectors().subscribe((response) => {
@@ -84,13 +74,24 @@ export class RequestComponent {
       ...(this.requestForm.value as Company),
     });
   }
+  //Showing success alert 
+  onSubmit() {
+    this.showSuccessAlert = true;
+    setTimeout(() => {
+      this.showSuccessAlert = false;
+    }, 1500);
+    setTimeout(() => {
+      this.router.navigate(["user/home"]);
+    }, 2000);
+  }
   //uploading the logo
   upload(event: Event) {
     let file = (event.target as HTMLInputElement)?.files?.[0];
     if (file) {
       this.storage.uploadStartupLogo(file).subscribe((value) => {
         this.downloadUrl = value;
-        this.request.logo = value;
+        this.requestForm.controls.logo.setValue(value);
+
       });
     }
   }

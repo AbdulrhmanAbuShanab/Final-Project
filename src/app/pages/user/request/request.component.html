@@ -114,7 +114,7 @@
       [disabled]="requestForm.invalid"
       mat-raised-button
       color="primary"
-      (click)="submit()"
+      (click)="submit(); onSubmit();"
     >
       Submit
     </button>

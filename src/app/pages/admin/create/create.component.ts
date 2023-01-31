@@ -62,16 +62,6 @@ export class CreateComponent {
     this.companies$ = this.companiesService.getCompanies();
     this.getSectors();
   }
-  //Showing success alert
-  // onSubmit() {
-  //   this.showSuccessAlert = true;
-  //   setTimeout(() => {
-  //     this.showSuccessAlert = false;
-  //   }, 2000);
-  //   setTimeout(() => {
-  //     this.router.navigate(["admin/allcompanies"]);
-  //   }, 3000);
-  // }
   //Getting sectors to display them in the select options
   getSectors() {
     this.companiesService.getSectors().subscribe((response) => {
@@ -82,28 +72,36 @@ export class CreateComponent {
   submit() {
       this.companiesService.addCompany(
         {...this.createCompany.value as Company}
-  
       ).subscribe({
         next: (response)=> {
-          this.router.navigate(['admin/allcompanies']);  
+          this.onSubmit();
         },
-        error: (error)=> {
+        error: (error)=> {  
           alert(JSON.stringify(error));
         },
         complete: ()=> console.log('completed')
       });
         //navigate
       }
-  
+  //Showing success alert
+  onSubmit() {
+    this.showSuccessAlert = true;
+    setTimeout(() => {
+      this.showSuccessAlert = false;
+    }, 2000);
+    setTimeout(() => {
+      this.router.navigate(["admin/allcompanies"]);
+    }, 3000);
+  }
   //Uploading image to firestorage
   upload(event: Event) {
     let file = (event.target as HTMLInputElement)?.files?.[0];
     if (file) {
       this.storage.uploadStartupLogo(file).subscribe((value) => {
-       console.log(value);
        this.downloadUrl=value;
+       console.log(value);
+       console.log(this.createCompany.controls.logo.value);
        this.createCompany.controls.logo.setValue(value);
-       console.log(this.company, 'after update');
       });
     }
   }

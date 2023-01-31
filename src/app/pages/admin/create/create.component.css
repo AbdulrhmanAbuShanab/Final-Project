@@ -125,4 +125,36 @@
     border-radius: .3125rem;
     padding: .625rem;
   }
+
+  @media screen and (max-width: 1000px) {
+    .inputs {
+      width: auto;
+      height: auto;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    form {
+      width: auto;
+      height: auto;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container{
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    button{
+      width: auto;  
+    }
+  }
   

@@ -16,11 +16,13 @@ export class AdminFirebaseService {
   requestCollection!: AngularFirestoreCollection<Company>;
   sectorsCollection!: AngularFirestoreCollection<Sector>;
 
+
   constructor(private firestore: AngularFirestore) {
     this.companiesCollection = this.firestore.collection('companies');
     this.requestCollection = this.firestore.collection('requests');
     this.sectorsCollection = this.firestore.collection('sectors');
   }
+  
   //sectors
   getSectors(): Observable<Sector[]>{
     return this.sectorsCollection.valueChanges({"idField":'uid'});
@@ -45,7 +47,7 @@ export class AdminFirebaseService {
     return this.requestCollection.doc(id).valueChanges();
   }
   editRequest(id: string, request: Company){
-    return from(this.requestCollection.doc(id).update({...request}));
+    return from(this.requestCollection.doc(id).update({...request}))
   }
 
   //companies

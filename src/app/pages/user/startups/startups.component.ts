@@ -25,13 +25,13 @@ export class StartupsComponent {
 
   searchCompanies(se: string) {
     this.companies = this.companies2;
-    this.companies = this.companies.filter((x) => x.companyName.includes(se));
+    this.companies = this.companies.filter((x) => x.companyName?.includes(se));
   }
 
   filterCompanies(event: any) {
     this.companies = this.companies2;
     this.companies = this.companies.filter((x) =>
-      x.sector.includes(event.value)
+      x.sector?.includes(event.value)
     );
   }
 }

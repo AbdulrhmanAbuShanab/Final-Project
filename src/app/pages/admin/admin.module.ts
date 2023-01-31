@@ -21,7 +21,8 @@ import { CreateSComponent } from './create-s/create-s.component';
     RequestsComponent,
     AcceptComponent,
     SectorsComponent,
-    CreateSComponent],
+    CreateSComponent,
+    ],
   imports: [
     CommonModule,
     AdminRoutingModule,

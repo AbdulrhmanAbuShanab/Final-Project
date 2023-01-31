@@ -1,66 +1,111 @@
 <div class="container" *ngIf="company$ | async as company">
     <h2>Edit StartUp</h2>
-    <form #form="ngForm" (ngSubmit)="deleteCompany(form.value)">
-        <mat-form-field>
-            <mat-label>Enter Company Name</mat-label>
+    <form #form="ngForm" >
+        <div class="inputs">
+        <div class="inputBox">
             <input  required  matInput name="companyName" [(ngModel)]='company.companyName' >
-            <mat-error>company name is required</mat-error>
-        </mat-form-field>
+            <span>Company Name</span>
+            <mat-error
+          *ngIf="form.controls['companyName'].hasError?.('required') && (form.controls['companyName'].dirty || form.controls['companyName'].touched)"
+          >company name is required</mat-error
+        >
+        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company City</mat-label>
+        <div class="inputBox">
             <input  required  matInput name="city" [(ngModel)]='company.city' >
-            <mat-error>company city is required</mat-error>
-        </mat-form-field>
+            <span>Company City</span>
+            <mat-error
+            *ngIf="form.controls['city'].hasError?.('required') && (form.controls['city'].dirty || form.controls['city'].touched)"
+            >company city is required</mat-error
+          > 
+        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company Email</mat-label>
+        <div class="inputBox">
             <input  matInput name="email" type="email" [(ngModel)]='company.email' ngmodel [email]="true" >
-            <mat-error>email is required</mat-error>
-        </mat-form-field>
+            <span>Company Email</span>
+            <mat-error
+            *ngIf="form.controls['email'].hasError?.('required') && (form.controls['email'].dirty || form.controls['email'].touched)"
+            >company name is required</mat-error
+          >        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company Founder</mat-label>
+        <div class="inputBox">
             <input required  matInput name="founder" [(ngModel)]='company.founder' >
-            <mat-error>company founder is required</mat-error>
-        </mat-form-field>
+            <span>Company Founder</span>
+            <mat-error
+            *ngIf="form.controls['founder'].hasError?.('required') && (form.controls['founder'].dirty || form.controls['founder'].touched)"
+            >company name is required</mat-error
+          >        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company logo</mat-label>
-            <input required  matInput name="logo" [(ngModel)]='company.logo' >
-            <mat-error>company logo is required</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Enter The Number of Company Employees</mat-label>
+        <div class="inputBox">
             <input required  matInput name="numOfEmployees" [(ngModel)]='company.numOfEmployees' >
-            <mat-error>company employee number is required</mat-error>
-        </mat-form-field>
+            <span>Number Of Employees</span>
+            <mat-error
+          *ngIf="form.controls['numOfEmployees'].hasError?.('numOfEmployees') && (form.controls['numOfEmployees'].dirty || form.controls['numOfEmployees'].touched)"
+          >company name is required</mat-error
+        >
+        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company Phone</mat-label>
+        <div class="inputBox">
             <input required  matInput name="phone" [(ngModel)]='company.phone' >
-            <mat-error>company phone is required</mat-error>
-        </mat-form-field>
+            <span>Company Phone</span>
+            <mat-error
+          *ngIf="form.controls['phone'].hasError?.('required') && (form.controls['phone'].dirty || form.controls['phone'].touched)"
+          >company name is required</mat-error
+        >
+        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company Sector</mat-label>
-            <input required  matInput name="sector" [(ngModel)]='company.sector' >
-            <mat-error>company sector is required</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Enter Company Website</mat-label>
+        <div class="inputBox">
             <input required type="url"  matInput name="website" [(ngModel)]='company.website' >
-            <mat-error>company website is required</mat-error>
-        </mat-form-field>
+            <span>Company Website</span>
+            <mat-error
+          *ngIf="form.controls['website'].hasError?.('required') && (form.controls['website'].dirty || form.controls['website'].touched)"
+          >company name is required</mat-error
+        >
+        </div>
 
-        <mat-form-field>
-            <mat-label>Enter Company Year Of Establishment</mat-label>
-            <input required  matInput name="yearOfEstablishment" [(ngModel)]='company.yearOfEstablishment' >
-            <mat-error>company year of establishment is required</mat-error>
-        </mat-form-field>
-        
-          <button [disabled]="form.invalid" mat-raised-button color="primary">Submit</button>
+        <div class="inputBox">
+            <input required name="yearOfEstablishment" [(ngModel)]='company.yearOfEstablishment' >
+            <span>Year Of Establishment</span>
+            <mat-error
+          *ngIf="form.controls['yearOfEstablishment'].hasError?.('required') && (form.controls['yearOfEstablishment'].dirty || form.controls['yearOfEstablishment'].touched)"
+          >company name is required</mat-error
+        >
+        </div>
+            <div class="inputBox">
+                <select required name="sector" [(ngModel)]='company.sector'>
+                  <option
+                    *ngFor="let sector of sectors"
+                    value="{{ sector.sectorName }}"
+                  >
+                    {{ sector.sectorName }}
+                  </option>
+                </select>
+                <span>Company Sector</span>
+            <mat-error
+          *ngIf="form.controls['sector'].hasError?.('required') && (form.controls['sector'].dirty || form.controls['sector'].touched)"
+          >company name is required</mat-error
+        >
+        </div>
+
+        <div class="inputBox">
+            <label for="logo"><i class="fa-solid fa-image"></i> Click Here To Upload Image</label>
+            <input class="image" type="file" accept="image/*" id="logo" (change)="upload($event)"/>
+            <img *ngIf="downloadUrl" [src]="downloadUrl" class="requestLogo">
+            <span>Upload Logo</span>
+        </div>
+
+        <div class="inputBox">
+            <input required name="logo" [(ngModel)]="company.logo"/>
+            <span>Company Logo</span>
+            <mat-error
+          *ngIf="form.controls['logo'].hasError?.('required') && (form.controls['logo'].dirty || form.controls['logo'].touched)"
+          >company logo is required</mat-error
+        >
+        </div>
+    </div>
+          <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="deleteCompany(form.value); onSubmit();">Submit</button>
     </form>
+    <div class="alert" *ngIf="showSuccessAlert" >
+        <p>You Have Successfully Updated The Company Details, Thank You</p>
+      </div>
 </div>
