@@ -1,3 +1,23 @@
+<div class="searchFilter">
+  <div class="search">
+    <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <input
+      #inp
+      type="text"
+      id="companyName"
+      placeholder="Search for a company..."
+      (keyup)="searchCompanies(inp.value)"
+    />
+  </div>
+  <select (change)="filterCompanies($event.target)">
+    <option value="" disabled selected hidden>Filter By Sector</option>
+    <option *ngFor="let sector of sectors"
+    value="{{ sector.sectorName }}"
+  >
+    {{ sector.sectorName }}</option>
+  </select>
+</div>
+<div class="container">
 <table mat-table [dataSource]="companies" class="mat-elevation-z8">
 
   <!-- Id Column -->
@@ -60,3 +80,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>

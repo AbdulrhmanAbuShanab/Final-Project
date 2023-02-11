@@ -12,15 +12,20 @@
         </div>        
   
         <div class="inputBox">
-          <label for="logo"><i class="fa-solid fa-image"></i>Choose Image</label>
-          <input class="image" type="file" accept="image/*" id="logo" name="logo" formControlName="sectorLogo" (change)="upload($event)"/>
-          <img *ngIf="sectorLogoUrl" [src]="sectorLogoUrl" class="sectorLogo">
+          <label for="logo"><i class="fa-solid fa-image"></i>Click Here To Upload Image</label>
+          <input class="image" type="file" accept="image/*" id="logo"(change)="upload($event)"/>
+          <img *ngIf="downloadUrl" [src]="downloadUrl" class="sectorLogo">
           <span>Sector Logo</span>
+        </div>
+
+        <div class="inputBox">
+          <input required name="sectorLogo" formControlName="sectorLogo"/>
+          <span>Company Logo</span>
           <mat-error
             *ngIf="createSector.controls['sectorLogo'].hasError?.('required') && (createSector.controls['sectorLogo'].dirty || createSector.controls['sectorLogo'].touched)"
             >sector logo is required</mat-error
           >
-        </div>
+      </div>
       </div>
   
       <button

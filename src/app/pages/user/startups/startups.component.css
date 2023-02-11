@@ -11,7 +11,7 @@
   margin-top: .9375rem;
 }
 .search > input {
-  background-color: #aa9fe7;
+  background-color: #f0f0f0;
   border: none;
   border-radius: .3125rem;
   width: 28.125rem;
@@ -24,7 +24,7 @@
   font-weight: 600;
 }
 .icon {
-  background-color: #aa9fe7;
+  background-color: #f0f0f0;
   width: 2.5rem;
   border-radius: .3125rem;
 }
@@ -34,14 +34,14 @@
 }
 select {
   margin-right: 7.1875rem;
-  background-color: #aa9fe7;
+  background-color: #f0f0f0;
   color: #673ab7;
   font-weight: 600;
   margin-top: .9375rem;
   height: 3.125rem;
   width: 10.9375rem;
   outline: none;
-  border-color: #aa9fe7;
+  border-color: #f0f0f0;
   border-radius: .3125rem;
   text-indent: .9375rem;
 }
@@ -61,7 +61,7 @@ select:active {
   padding-bottom: 1.875rem; 
 }
 .cards {
-  background-color: #aa9fe7;
+  background-color: #f0f0f0;
   width: 9.375rem;
   height: 7.8125rem;
   display: flex;

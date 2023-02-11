@@ -17,7 +17,7 @@
   flex-wrap: wrap;
   height: auto;
   justify-content: space-evenly;
-  border: .0625rem solid #aa9fe7;
+  border: .0625rem solid #f0f0f0;
   border-radius: .3125rem;
 }
 .cards{
@@ -29,7 +29,7 @@ span{
   position: absolute;
   font-size: 1rem;
   padding: .3125rem .9375rem .3125rem .9375rem;
-  color: #aa9fe7;
+  color: #f0f0f0;
   transform: translateX(.625rem) translateY(-0.9375rem);
   background: #4a2d7a;
   border-radius: .4375rem;

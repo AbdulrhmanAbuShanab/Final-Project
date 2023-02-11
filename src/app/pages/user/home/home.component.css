@@ -9,7 +9,7 @@
 }
 .text h1,
 .text h3 {
-  color: #ddd7ff;
+  color: #f0f0f0;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 0.1rem;
@@ -32,7 +32,7 @@
   align-items: center;
 }
 .first {
-  color: #ddd7ff;
+  color: #f0f0f0;
   font-size: large;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@
 .texts {
   display: flex;
   flex-direction: column;
-  color: #ddd7ff;
+  color: #f0f0f0;
 }
 .texts h1, .texts h3{
   font-family: "Open Sans", sans-serif;
@@ -71,8 +71,8 @@ button {
   margin-bottom: .125rem;
   width: 9.375rem;
   height: 2.1875rem;
-  border: .0625rem solid #ddd7ff;
-  color: #ddd7ff;
+  border: .0625rem solid #f0f0f0;
+  color: #f0f0f0;
   font-size: medium;
   font-weight: 500;
   background-color: #3c2f80;
@@ -81,7 +81,7 @@ button {
   outline: none;
 }
 button:hover {
-  box-shadow: inset 9.375rem 0 0 0 #ddd7ff;
+  box-shadow: inset 9.375rem 0 0 0 #f0f0f0;
   color: #3c2f80;
   cursor: pointer;
 }

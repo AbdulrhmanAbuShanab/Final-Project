@@ -9,7 +9,7 @@
   padding-bottom: 1.875rem;
 }
 h2 {
-  color: #aa9fe7;
+  color: #f0f0f0;
   text-transform: uppercase;
 }
 form {
@@ -42,10 +42,10 @@ label {
   width: 100%;
   height: 1.25rem;
   padding: 0.9375rem 0.3125rem 0.9375rem 0.9375rem;
-  border: 0.0625rem solid #aa9fe7;
+  border: 0.0625rem solid #f0f0f0;
   border-radius: 0.3125rem;
   outline: none;
-  color: #aa9fe7;
+  color: #f0f0f0;
   font-size: 1rem;
 }
 .inputBox {
@@ -59,22 +59,22 @@ label {
   width: 100%;
   height: 1.875rem;
   padding: 0.625rem;
-  border: 0.0625rem solid #aa9fe7;
+  border: 0.0625rem solid #f0f0f0;
   border-radius: 0.3125rem;
   background-color: #673ab7;
   outline: none;
-  color: #aa9fe7;
+  color: #f0f0f0;
   font-size: 0.9rem;
 }
 .inputBox select {
   width: 21.3125rem;
   height: 3.225rem;
   padding: 0.625rem;
-  border: 0.0625rem solid #aa9fe7;
+  border: 0.0625rem solid #f0f0f0;
   border-radius: 0.3125rem;
   background-color: #673ab7;
   outline: none;
-  color: #aa9fe7;
+  color: #f0f0f0;
   font-size: 0.9rem;
   overflow: auto;
 }
@@ -87,13 +87,13 @@ option {
   padding: 0.9375rem;
   pointer-events: none;
   font-size: 1rem;
-  color: #aa9fe7;
+  color: #f0f0f0;
   text-transform: uppercase;
   transition: 0.5s;
 }
 .inputBox input:valid ~ span,
 .inputBox select:valid ~ span {
-  color: #aa9fe7;
+  color: #f0f0f0;
   transform: translateX(0.625rem) translateY(-0.4375rem);
   font-size: 0.7rem;
   padding: 0 .625rem;
@@ -102,7 +102,7 @@ option {
   letter-spacing: 0.2rem;
 }
 mat-error {
-  color: #aa9fe7;
+  color: #f0f0f0;
   font-weight: bold;
 }
 button {
@@ -120,8 +120,8 @@ button {
   padding-bottom: 2.5rem;
 }
 .alert p {
-  color: white;
-  border: .0625rem solid white;
+  color: #f0f0f0;
+  border: .0625rem solid #f0f0f0;
   border-radius: .3125rem;
   padding: .625rem;
 }

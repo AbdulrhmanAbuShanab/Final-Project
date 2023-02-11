@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-around;
     background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
-    color: #bbafff;
+    color: #f0f0f0;
 }
 img{
     width: 37.5rem;
@@ -29,8 +29,8 @@ button{
     margin-bottom: .125rem;
     width: 9.375rem;
     height: 2.1875rem;
-    border: .0625rem solid #bbafff;
-    color: #bbafff;
+    border: .0625rem solid #f0f0f0;
+    color: #f0f0f0;
     font-size: medium;
     font-weight: 500;
     background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
@@ -39,7 +39,7 @@ button{
     outline: none;
   }
   button:hover{
-    box-shadow: inset 9.375rem 0 0 0 #bbafff;
+    box-shadow: inset 9.375rem 0 0 0 #f0f0f0;
     color: #673ab7;
     cursor: pointer;
   }

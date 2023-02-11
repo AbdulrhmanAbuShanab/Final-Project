@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: 100%;
+    height: 39rem;
     background: linear-gradient(0.25turn, #673ab7, #5b3898, #4a2d7a);
     display: flex;
     flex-direction: column;
@@ -76,8 +76,8 @@
     text-transform: uppercase;
     transition: 0.5s;
   }
-  .inputBox input:valid ~ span,
-  .inputBox select:valid ~ span {
+  .inputBox input ~ span,
+  .inputBox select ~ span {
     color: #f0f0f0;
     transform: translateX(10px) translateY(-7px);
     font-size: 11.2px;

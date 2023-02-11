@@ -23,7 +23,7 @@ export class CreateSComponent {
   sectors: Sector[] = [];
   sectors$?: Observable<Sector[]>;
   sub?: Subscription;
-  sectorLogoUrl?: string;
+  downloadUrl?: string;
   showSuccessAlert: boolean = false;
   constructor(
     private storage: FilestorageService,
@@ -63,15 +63,14 @@ export class CreateSComponent {
         this.router.navigate(["admin/sectors"]);
       }, 3000);
     }
-  //Uploading image to firestorage
-  upload(event: Event) {
-    let file = (event.target as HTMLInputElement)?.files?.[0];
-    if (file) {
-      this.storage.uploadSectorLogo(file).subscribe((value) => {
-       this.sectorLogoUrl=value;
-       this.createSector.controls.sectorLogo.setValue(value);
-       
-      });
+    upload(event: Event) {
+      let file = (event.target as HTMLInputElement)?.files?.[0];
+      if (file) {
+        this.storage.uploadStartupLogo(file).subscribe((value) => {
+         this.downloadUrl=value;
+         console.log(value);
+         this.createSector.controls.sectorLogo.setValue(value)
+        });
+      }
     }
-  }
 }
